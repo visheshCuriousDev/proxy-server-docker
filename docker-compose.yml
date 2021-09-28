@@ -1,0 +1,12 @@
+version: "3.3"
+
+services: 
+    proxy1:
+        image: nginx:alpine
+        ports:
+            - 0.0.0.0:8000:8000
+        environment:
+            TARGET_URL: <server_endpoint1>
+            PORT: 8000
+        volumes:
+          - ./proxy.conf:/etc/nginx/templates/proxy.conf.template
